@@ -2,7 +2,7 @@
 PyAudio Example: Mac OS X-only: Play a wave file with channel maps.
 """
 
-import pyaudio
+import pyaudiowpatch as pyaudio
 import wave
 import sys
 

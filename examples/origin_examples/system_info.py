@@ -5,7 +5,7 @@ Query and print PortAudio HostAPIs, Devices, and their
 support rates.
 """
 
-import pyaudio
+import pyaudiowpatch as pyaudio
 
 standard_sample_rates = [8000.0, 9600.0, 11025.0, 12000.0,
                          16000.0, 22050.0, 24000.0, 32000.0,

@@ -2,8 +2,9 @@
 
 ![PyAudioWasapiLoopbackPatch](assets/snake-350_patch.png)
 
-> PyAudioW(*indows|ASAPI*)Patch
 # PyAudioWPatch
+
+> PyAudioW(*indows|ASAPI*)Patch
 
 This fork will allow you to use the WASAPI device as loopback using **PyAudio**.
 
@@ -11,7 +12,15 @@ This fork will allow you to use the WASAPI device as loopback using **PyAudio**.
 
 
 
+
 ---
+
+<div align="center">
+
+## Origin README
+
+<div>
+
 
 <img align="right" width="200" style="margin-left: 3px" src="https://people.csail.mit.edu/hubert/pyaudio/images/snake-300.png">
 

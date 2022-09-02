@@ -1,6 +1,6 @@
 """PyAudio Example: Play a wave file (callback version)."""
 
-import pyaudio
+import pyaudiowpatch as pyaudio
 import wave
 import time
 import sys

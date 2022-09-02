@@ -3,7 +3,7 @@ PyAudio example: Record a few seconds of audio and save to a WAVE
 file.
 """
 
-import pyaudio
+import pyaudiowpatch as pyaudio
 import wave
 import sys
 

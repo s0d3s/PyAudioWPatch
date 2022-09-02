@@ -5,7 +5,7 @@ few samples and play them back immediately).
 This is the half duplex version.
 """
 
-import pyaudio
+import pyaudiowpatch as pyaudio
 import sys
 
 CHUNK = 1024
