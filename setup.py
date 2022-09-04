@@ -148,9 +148,9 @@ setup(
     long_description=long_description,
     long_description_content_type='text/markdown',
     license="Apache-2.0 license",
+    packages=["pyaudiowpatch"],
+    package_dir={"": "src"},
     scripts=[],
-    py_modules=['pyaudiowpatch'],
-    package_dir={'': 'src'},
     extras_require={
         "test": ["numpy"],
     },
