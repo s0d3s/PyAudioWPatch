@@ -33,8 +33,9 @@ The Windows Audio Session API ([WASAPI](https://docs.microsoft.com/en-us/windows
 ### Installation
 
 ```bash
-pip install
+pip install PyAudioWPatch
 ```
+> Wheels are currently only available for Windows x64 Python 3.{6,7,8,9,10,11}. I will try to add x32 before 09/11/22
 
 ### In code
 
