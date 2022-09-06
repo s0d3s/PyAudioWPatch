@@ -143,7 +143,7 @@ setup(
     name='PyAudioWPatch',
     version=__version__,
     author=__author__,
-    url="https://people.csail.mit.edu/hubert/pyaudio/",
+    url="https://github.com/s0d3s/PyAudioWPatch/",
     description="PortAudio fork with WASAPI loopback support",
     long_description=long_description,
     long_description_content_type='text/markdown',
