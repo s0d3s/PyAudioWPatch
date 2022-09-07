@@ -11,6 +11,7 @@ This fork will allow you to use the WASAPI device as loopback using **PyAudio**.
 ![Last Commit](https://img.shields.io/github/last-commit/s0d3s/PyAudioWPatch)
 ![Wheels](https://img.shields.io/pypi/wheel/PyAudioWpatch)
 ![Py Version](https://img.shields.io/pypi/pyversions/PyAudioWpatch)
+![Latest release](https://img.shields.io/github/v/release/s0d3s/PyAudioWPatch)
 
 </div>
 
