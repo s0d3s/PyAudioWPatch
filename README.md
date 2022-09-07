@@ -79,6 +79,7 @@ p.terminate()
  - The behavior of all standard methods is unchanged
  - Added several *life-improving* methods
  - Fixed problem with name encoding
+ - Ability to record audio from WASAPI loopback devices (see [example](https://github.com/s0d3s/PyAudioWPatch/blob/964afaed7dc03b6dd097f0c22d8a286663516544/examples/pawp_record_wasapi_loopback.py))
  
 #### More detailed
  - new methods:
