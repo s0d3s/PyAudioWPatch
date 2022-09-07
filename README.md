@@ -5,8 +5,6 @@
 
 # PyAudioWPatch
 
-> PyAudioW(*indows|ASAPI*)Patch
-
 This fork will allow you to use the WASAPI device as loopback using **PyAudio**.
 
 </div>
@@ -59,7 +57,9 @@ import pyaudiowpatch as pyaudio
 
 p = pyaudio.PyAudio()
 stream = p.open(...)
+
 # Do some staf
+...
 
 stream.stop_stream()
 stream.close()
@@ -94,7 +94,7 @@ p.terminate()
  
 #### Examples:
  - [Play sine, using \'new context manager'](https://github.com/s0d3s/PyAudioWPatch/blob/964afaed7dc03b6dd097f0c22d8a286663516544/examples/pawp_play_sine_using_context_manger.py)
- - [Record from audio from default speakers](https://github.com/s0d3s/PyAudioWPatch/blob/964afaed7dc03b6dd097f0c22d8a286663516544/examples/pawp_record_wasapi_loopback.py)
+ - [Record audio from default speakers](https://github.com/s0d3s/PyAudioWPatch/blob/964afaed7dc03b6dd097f0c22d8a286663516544/examples/pawp_record_wasapi_loopback.py)
  - [Cross-platform concept (Not example)](https://github.com/s0d3s/PyAudioWPatch/blob/964afaed7dc03b6dd097f0c22d8a286663516544/examples/pawp_crossplatform_concept.py)
 <!---
  - [Play sine, using \'new context manager'](examples/pawp_play_sine_using_context_manger.py)
