@@ -27,23 +27,18 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 """
 
 import os
+import sys
 import logging
 import platform
-from setuptools import setup, Extension
-import sys
 
-__version__ = "0.2.12.1"
+from setuptools import setup, Extension
+
+
+__version__ = "0.2.12.5"
 __author__  = "Hubert Pham(S0D3S edition)"
 
-# setup.py/setuptools will try to locate and link dynamically against portaudio,
-# except on Windows. On Windows, setup.py will attempt to statically link in
-# portaudio, since most users will install PyAudio from pre-compiled wheels.
-#
-# If you wish to compile PyAudio on Windows, use vcpkg to install portaudio with
-# either:
-#  - vcpkg install portaudio (for dynamic linking)
-#  - vcpkg install portaudio:x86-windows-static (for 32-bit static linking)
-#  - vcpkg install portaudio:x64-windows-static (for 64-bit static linking)
+
+IS_CROSS_COMPILING = os.environ.get('PAWP_C_C_FLAG', None) == "TRUE" # used when building with cibuildwheel
 
 MAC_SYSROOT_PATH = os.environ.get("SYSROOT_PATH", None)
 WIN_VCPKG_PATH = os.environ.get("VCPKG_PATH", None)
@@ -54,6 +49,7 @@ VERBOSE = False
 if "--pa-verbose" in sys.argv:
     VERBOSE = True
     sys.argv.remove("--pa-verbose")
+
 
 def setup_extension():
     pyaudio_module_sources = ['src/_portaudiomodule.c']
@@ -85,6 +81,9 @@ def setup_extension():
         bits = platform.architecture()[0]
         if '64' in bits:
             defines.append(('MS_WIN64', '1'))
+            os.environ["CC"] = "x86_64-w64-mingw32-gcc"
+        else:
+            os.environ["CC"] = "i686-w64-mingw32-gcc"
 
         if WIN_VCPKG_PATH:
             include_dirs += [os.path.join(WIN_VCPKG_PATH, 'include')]
@@ -100,8 +99,14 @@ def setup_extension():
             external_libraries.remove("portaudio")
             
             include_dirs += [os.path.join(PORTAUDIO_PATH, 'include')]
-            extra_link_args.append(os.path.join(PORTAUDIO_PATH, 'lib/.libs/libportaudio.a'))
-        
+            
+            if not IS_CROSS_COMPILING:
+                extra_link_args.append(os.path.join(PORTAUDIO_PATH, 'lib/.libs/libportaudio.a'))
+            elif '64' in bits:
+                extra_link_args.append(os.path.join(PORTAUDIO_PATH, 'lib_dist/libportaudio-x86_64.a'))
+            else:
+                extra_link_args.append(os.path.join(PORTAUDIO_PATH, 'lib_dist/libportaudio-x86.a'))
+
         if 'ORIGINAL_PATH' in os.environ and 'cygdrive' in os.environ['ORIGINAL_PATH']:
             external_libraries += ["winmm","ole32","uuid"]
             extra_link_args += ["-lwinmm","-lole32","-luuid"]
@@ -115,9 +120,6 @@ def setup_extension():
             extra_compile_args += ["/MT"]
             external_libraries += ["winmm","ole32","uuid","advapi32","user32"]
             #extra_link_args += ["/NODEFAULTLIB:MSVCRT"]
-            
-
-        
     else:
         # GNU/Linux and other posix-like OSes will dynamically link to
         # portaudio, installed by the package manager.
