@@ -2,7 +2,6 @@
 
 .PHONY: docs clean build
 
-VERSION := 0.2.12
 PYTHON ?= python
 BUILD_ARGS ?=
 SPHINX ?= sphinx-build
@@ -26,7 +25,7 @@ what:
 	@echo "   python setup.py install"
 
 clean:
-	@rm -rf build dist MANIFEST $(DOCS_OUTPUT) src/*.pyc
+	@rm -rf build dist build  MANIFEST $(DOCS_OUTPUT) src/*.pyc src/*.egg-info
 
 ######################################################################
 # Documentation
