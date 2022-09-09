@@ -9,7 +9,7 @@ PortAudio fork, which will be used for adding WASAPI loobpack functionality to P
  - install Cygwin
    - install Cygwin  packages(via installer):
      > autoconf, automake, cmake, make, libtool, mingw64-x86_64-gcc-g++ (mingw64-i686-gcc-g++)
-   - fix cygwinccompiler.py version mismatch:
+   - fix cygwinccompiler.py version mismatch(only for `python<=3.6`):
      - open path/to/python/Lib/distutils/cygwinccompiler.py
      - replace `gcc -dumpversion` -> `gcc --version`
        > In latest versions of MinGW-gcc -dumpversion only dumps the major version, which is not captured by the regular expression used in distutils.
@@ -18,7 +18,7 @@ PortAudio fork, which will be used for adding WASAPI loobpack functionality to P
      `./configure --with-winapi=wasapi --enable-shared=no  --host=x86_64-w64-mingw32`
      > For 32-bit systems change 'x86_64' to 'i686'
      
-     `make`
+     `make onlylib`
   - *Before rebuilding*:
      `make clean`
      `make`

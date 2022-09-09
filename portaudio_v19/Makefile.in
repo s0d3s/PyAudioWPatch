@@ -159,6 +159,8 @@ SUBDIRS =
 
 all: lib/$(PALIB) all-recursive tests examples selftests
 
+onlylib: lib/$(PALIB)
+
 tests: bin-stamp $(TESTS)
 
 examples: bin-stamp $(EXAMPLES)
