@@ -15,7 +15,7 @@ This fork will allow you to use the WASAPI device as loopback using **PyAudio**.
 
 </div>
 
-<br /><br /><br /><br />
+<br /><br />
 
 ## For whom?
 
@@ -39,7 +39,8 @@ The Windows Audio Session API ([WASAPI](https://docs.microsoft.com/en-us/windows
 ```bash
 pip install PyAudioWPatch
 ```
-> Wheels are currently only available for Windows x64 Python 3.{6,7,8,9,10,11}. I will try to add x32 before 09/11/22
+> Wheels are available for **Windows**, Python *3.{7,8,9,10,11}*.<br />
+> All wheels support APIs: WMME, WASAPI, DirectX(DSound).
 
 ### In code
 
@@ -125,6 +126,14 @@ The following were taken as a basis:
    ```
  - ???
  - Profit.
+ 
+ Also you can build wheel**s**:
+ - `pip install cibuildwheel`
+ - Run in Cygwin:
+    ```bash
+    ./cygwin_cibuildwheel_build.sh
+    ```
+ - Get your wheels in the `./wheelhouse` folder
 
 ---
 

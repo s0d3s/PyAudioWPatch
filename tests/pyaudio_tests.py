@@ -23,7 +23,7 @@ import sys
 
 import numpy
 
-import pyaudio
+import pyaudiowpatch as pyaudio
 
 # To skip tests requiring hardware, set this environment variable:
 SKIP_HW_TESTS = 'PYAUDIO_SKIP_HW_TESTS' in os.environ
