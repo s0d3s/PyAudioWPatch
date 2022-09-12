@@ -20,7 +20,7 @@ This fork will allow you to use the WASAPI device as loopback using **PyAudio**.
 
 ## For whom?
 
-If you want to record sound from your speakers in python, then this is the fork for you.
+If you want to record sound from speakers in python, then this fork is for you.
 
 > PyAudioW(*indows|ASAPI*)Patch come only with WMME, DirectX and WASAPI support
 > if you need more -> create an issue
