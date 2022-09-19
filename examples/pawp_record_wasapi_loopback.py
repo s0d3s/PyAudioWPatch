@@ -1,4 +1,8 @@
+"""A simple example of recording from speakers ('What you hear') using the WASAPI loopback device"""
+
 from _spinner_helper import Spinner
+# Spinner is a helper class that is in the same examples folder.
+# It is optional, you can safely delete the code associated with it.
 
 import pyaudiowpatch as pyaudio
 import numpy as np
