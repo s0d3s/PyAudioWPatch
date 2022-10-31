@@ -4,3 +4,4 @@ src/PyAudio.egg-info
 dist/
 docs/
 MANIFEST
+__pycache__

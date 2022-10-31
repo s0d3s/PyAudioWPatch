@@ -1,7 +1,6 @@
 from _spinner_helper import Spinner
 
 import pyaudiowpatch as pyaudio
-import numpy as np
 import time
 import wave
 
@@ -37,20 +36,20 @@ if __name__ == "__main__":
                     default_speakers = loopback
                     break
             else:
-                spinner.print("Default loopback output device not found.\nRun this to check available devices.\nExiting...\n")
+                spinner.print("Default loopback output device not found.\n\nRun `python -m pyaudiowpatch` to check available devices.\nExiting...\n")
                 spinner.stop()
                 exit()
                 
         spinner.print(f"Recording from: ({default_speakers['index']}){default_speakers['name']}")
         
-        waveFile = wave.open(filename, 'wb')
-        waveFile.setnchannels(default_speakers["maxInputChannels"])
-        waveFile.setsampwidth(pyaudio.get_sample_size(pyaudio.paInt16))
-        waveFile.setframerate(int(default_speakers["defaultSampleRate"]))
+        wave_file = wave.open(filename, 'wb')
+        wave_file.setnchannels(default_speakers["maxInputChannels"])
+        wave_file.setsampwidth(pyaudio.get_sample_size(pyaudio.paInt16))
+        wave_file.setframerate(int(default_speakers["defaultSampleRate"]))
         
         def callback(in_data, frame_count, time_info, status):
             """Write frames and return PA flag"""
-            waveFile.writeframes(in_data)
+            wave_file.writeframes(in_data)
             return (in_data, pyaudio.paContinue)
         
         with p.open(format=pyaudio.paInt16,
@@ -69,4 +68,4 @@ if __name__ == "__main__":
             spinner.print(f"The next {duration} seconds will be written to {filename}")
             time.sleep(duration) # Blocking execution while playing
         
-        waveFile.close()
+        wave_file.close()
