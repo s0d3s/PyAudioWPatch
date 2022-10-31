@@ -1,4 +1,8 @@
+"""An example of how to play sounds using the 'new context manager' added to PyAudio"""
+
 from _spinner_helper import Spinner
+# Spinner is a helper class that is in the same examples folder.
+# It is optional, you can safely delete the code associated with it.
 
 import pyaudiowpatch as pyaudio
 import numpy as np
