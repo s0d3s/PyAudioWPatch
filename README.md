@@ -81,15 +81,15 @@ p.terminate()
  - The behavior of all standard methods is unchanged
  - Added several *life-improving* methods
  - Fixed problem with name encoding
- - Ability to record audio from WASAPI loopback devices (see [example](https://github.com/s0d3s/PyAudioWPatch/blob/964afaed7dc03b6dd097f0c22d8a286663516544/examples/pawp_record_wasapi_loopback.py))
+ - Ability to record audio from WASAPI loopback devices (see [example](https://github.com/s0d3s/PyAudioWPatch/blob/master/examples/pawp_record_wasapi_loopback.py))
  
 #### More detailed
  - new methods:
-   - [`get_host_api_info_generator`](https://github.com/s0d3s/PyAudioWPatch/blob/964afaed7dc03b6dd097f0c22d8a286663516544/src/pyaudiowpatch/__init__.py#L1066) - Iterate over all Host APIs
-   - [`get_device_info_generator`](https://github.com/s0d3s/PyAudioWPatch/blob/964afaed7dc03b6dd097f0c22d8a286663516544/src/pyaudiowpatch/__init__.py#L1080) - Iterate over all devices
-   - [`get_device_info_generator_by_host_api`](https://github.com/s0d3s/PyAudioWPatch/blob/964afaed7dc03b6dd097f0c22d8a286663516544/src/pyaudiowpatch/__init__.py#L1093) - Iterate over all devices, by specific Host API(index/type)
-   - [`get_loopback_device_info_generator`](https://github.com/s0d3s/PyAudioWPatch/blob/964afaed7dc03b6dd097f0c22d8a286663516544/src/pyaudiowpatch/__init__.py#L1117) - Iterate over all devices(with loopback mode)
-   - [`print_detailed_system_info`](https://github.com/s0d3s/PyAudioWPatch/blob/964afaed7dc03b6dd097f0c22d8a286663516544/src/pyaudiowpatch/__init__.py#L1133) - Print some info about Host Api and devices
+   - [`get_host_api_info_generator`](https://github.com/s0d3s/PyAudioWPatch/blob/master/src/pyaudiowpatch/__init__.py#L1066) - Iterate over all Host APIs
+   - [`get_device_info_generator`](https://github.com/s0d3s/PyAudioWPatch/blob/master/src/pyaudiowpatch/__init__.py#L1080) - Iterate over all devices
+   - [`get_device_info_generator_by_host_api`](https://github.com/s0d3s/PyAudioWPatch/blob/master/src/pyaudiowpatch/__init__.py#L1093) - Iterate over all devices, by specific Host API(index/type)
+   - [`get_loopback_device_info_generator`](https://github.com/s0d3s/PyAudioWPatch/blob/master/src/pyaudiowpatch/__init__.py#L1117) - Iterate over all devices(with loopback mode)
+   - [`print_detailed_system_info`](https://github.com/s0d3s/PyAudioWPatch/blob/master/src/pyaudiowpatch/__init__.py#L1133) - Print some info about Host Api and devices
 <!---
    - [`get_host_api_info_generator`](src/pyaudiowpatch/__init__.py#L1066) - Iterate over all Host APIs
    - [`get_device_info_generator`](src/pyaudiowpatch/__init__.py#L1080) - Iterate over all devices
@@ -102,10 +102,10 @@ p.terminate()
    - Run `python -m pyaudiowpatch` to get list of devices(like `print_detailed_system_info` call)
  
 #### Examples:
- - [Play sine, using \'new context manager'](https://github.com/s0d3s/PyAudioWPatch/blob/964afaed7dc03b6dd097f0c22d8a286663516544/examples/pawp_play_sine_using_context_manger.py)
- - [Record audio from default speakers](https://github.com/s0d3s/PyAudioWPatch/blob/964afaed7dc03b6dd097f0c22d8a286663516544/examples/pawp_record_wasapi_loopback.py)
- - [Simple recording app](https://github.com/s0d3s/PyAudioWPatch/blob/86ab33c638c13efe9dad5d13ff4f910c1b1e227d/examples/pawp_simple_recording_app.py)
- - [Cross-platform concept (Not example)](https://github.com/s0d3s/PyAudioWPatch/blob/964afaed7dc03b6dd097f0c22d8a286663516544/examples/pawp_crossplatform_concept.py)
+ - [Play sine, using \'new context manager'](https://github.com/s0d3s/PyAudioWPatch/blob/master/examples/pawp_play_sine_using_context_manger.py)
+ - [Record audio from default speakers](https://github.com/s0d3s/PyAudioWPatch/blob/master/examples/pawp_record_wasapi_loopback.py)
+ - [Simple recording app](https://github.com/s0d3s/PyAudioWPatch/blob/master/examples/pawp_simple_recording_app.py)
+ - [Cross-platform concept (Not example)](https://github.com/s0d3s/PyAudioWPatch/blob/master/examples/pawp_crossplatform_concept.py)
 <!---
  - [Play sine, using \'new context manager'](examples/pawp_play_sine_using_context_manger.py)
  - [Record from audio from default speakers](examples/pawp_record_wasapi_loopback.py)
