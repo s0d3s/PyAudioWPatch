@@ -104,7 +104,7 @@ p.terminate()
 #### Examples:
  - [Play sine, using \'new context manager'](https://github.com/s0d3s/PyAudioWPatch/blob/964afaed7dc03b6dd097f0c22d8a286663516544/examples/pawp_play_sine_using_context_manger.py)
  - [Record audio from default speakers](https://github.com/s0d3s/PyAudioWPatch/blob/964afaed7dc03b6dd097f0c22d8a286663516544/examples/pawp_record_wasapi_loopback.py)
- - [Simple recording app](examples/pawp_simple_recording_app.py)
+ - [Simple recording app](https://github.com/s0d3s/PyAudioWPatch/blob/86ab33c638c13efe9dad5d13ff4f910c1b1e227d/examples/pawp_simple_recording_app.py)
  - [Cross-platform concept (Not example)](https://github.com/s0d3s/PyAudioWPatch/blob/964afaed7dc03b6dd097f0c22d8a286663516544/examples/pawp_crossplatform_concept.py)
 <!---
  - [Play sine, using \'new context manager'](examples/pawp_play_sine_using_context_manger.py)
