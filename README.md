@@ -85,11 +85,11 @@ p.terminate()
  
 #### More detailed
  - new methods:
-   - [`get_host_api_info_generator`](https://github.com/s0d3s/PyAudioWPatch/blob/master/src/pyaudiowpatch/__init__.py#L1066) - Iterate over all Host APIs
-   - [`get_device_info_generator`](https://github.com/s0d3s/PyAudioWPatch/blob/master/src/pyaudiowpatch/__init__.py#L1080) - Iterate over all devices
-   - [`get_device_info_generator_by_host_api`](https://github.com/s0d3s/PyAudioWPatch/blob/master/src/pyaudiowpatch/__init__.py#L1093) - Iterate over all devices, by specific Host API(index/type)
-   - [`get_loopback_device_info_generator`](https://github.com/s0d3s/PyAudioWPatch/blob/master/src/pyaudiowpatch/__init__.py#L1117) - Iterate over all devices(with loopback mode)
-   - [`print_detailed_system_info`](https://github.com/s0d3s/PyAudioWPatch/blob/master/src/pyaudiowpatch/__init__.py#L1133) - Print some info about Host Api and devices
+   - [`get_host_api_info_generator`](https://github.com/s0d3s/PyAudioWPatch/blob/master/src/pyaudiowpatch/__init__.py#L1082) - Iterate over all Host APIs
+   - [`get_device_info_generator`](https://github.com/s0d3s/PyAudioWPatch/blob/master/src/pyaudiowpatch/__init__.py#L1096) - Iterate over all devices
+   - [`get_device_info_generator_by_host_api`](https://github.com/s0d3s/PyAudioWPatch/blob/master/src/pyaudiowpatch/__init__.py#L1109) - Iterate over all devices, by specific Host API(index/type)
+   - [`get_loopback_device_info_generator`](https://github.com/s0d3s/PyAudioWPatch/blob/master/src/pyaudiowpatch/__init__.py#L1133) - Iterate over all devices(with loopback mode)
+   - [`print_detailed_system_info`](https://github.com/s0d3s/PyAudioWPatch/blob/master/src/pyaudiowpatch/__init__.py#L1149) - Print some info about Host Api and devices
 <!---
    - [`get_host_api_info_generator`](src/pyaudiowpatch/__init__.py#L1066) - Iterate over all Host APIs
    - [`get_device_info_generator`](src/pyaudiowpatch/__init__.py#L1080) - Iterate over all devices
