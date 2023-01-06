@@ -6,6 +6,8 @@
 # PyAudioWPatch
 
 This fork will allow you to use the WASAPI device as loopback using **PyAudio**.
+<br>
+So you can *use speakers to record audio*✨
 
 
 ![Last Commit](https://img.shields.io/github/last-commit/s0d3s/PyAudioWPatch)
