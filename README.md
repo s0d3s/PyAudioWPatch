@@ -56,7 +56,7 @@ with pyaudio.PyAudio() as p:
     # Open PyA manager via context manager
     with p.open(...) as stream:
         # Open audio stream via context manager
-        # Do some staff
+        # Do some stuff
         ...
 ```
 
@@ -68,7 +68,7 @@ import pyaudiowpatch as pyaudio
 p = pyaudio.PyAudio()
 stream = p.open(...)
 
-# Do some staff
+# Do some stuff
 ...
 
 stream.stop_stream()
