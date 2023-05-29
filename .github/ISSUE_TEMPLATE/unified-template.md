@@ -7,6 +7,8 @@ assignees: ''
 
 ---
 
+[comment]: <> (Just paste "x" inside brackets, for example: - [x] Some positive statement)
+
 **What problem are you facing?**
 
 - [ ] audio isn`t recorded
