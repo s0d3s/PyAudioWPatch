@@ -1,7 +1,7 @@
 <div align="center">
 
 <!---![PyAudioWasapiLoopbackPatch](assets/snake-350_patch.png)-->
-![PyAudioWasapiLoopbackPatch](https://raw.githubusercontent.com/s0d3s/PyAudioWPatch/master/assets/snake_trace_clear.svg)
+<img alt="PyAudio Wasapi Loopback Patch" src="https://raw.githubusercontent.com/s0d3s/PyAudioWPatch/master/assets/snake_trace_clear.svg" height="414"/>
 
 # PyAudioWPatch
 
