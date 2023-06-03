@@ -5,3 +5,4 @@ dist/
 docs/
 MANIFEST
 __pycache__
+.idea/
