@@ -58,7 +58,7 @@ class AudioRecorder:
         self.stream = self.p.open(format=data_format,
                 channels=target_device["maxInputChannels"],
                 rate=int(target_device["defaultSampleRate"]),
-                frames_per_buffer=pyaudio.get_sample_size(pyaudio.paInt24),
+                frames_per_buffer=pyaudio.get_sample_size(data_format),
                 input=True,
                 input_device_index=target_device["index"],
                 stream_callback=self.callback
