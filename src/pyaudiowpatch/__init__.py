@@ -122,7 +122,7 @@ Overview
 """
 
 __author__ = "Hubert Pham(S0D3S edition)"
-__version__ = "0.2.12.5"
+__version__ = "0.2.12.6"
 __docformat__ = "restructuredtext en"
 
 import locale
