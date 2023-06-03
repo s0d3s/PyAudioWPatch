@@ -1221,10 +1221,11 @@ class PyAudio:
         :return: "info dict" of loopback analogue for device passed via `info_dict`
         """
 
-        if info_dict["maxOutputChannels"] < 1:
-            raise ValueError("`info_dict` must represent an output device")
-
         if not info_dict["isLoopbackDevice"]:
+
+            if info_dict["maxOutputChannels"] < 1:
+                raise ValueError("`info_dict` must represent an output device")
+
             for loopback in self.get_loopback_device_info_generator():
                 """
                 Try to find loopback device with same name(and [Loopback suffix]).
