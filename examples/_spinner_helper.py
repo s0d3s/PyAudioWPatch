@@ -56,6 +56,7 @@ class Spinner(Thread):
     def __exit__(self, exc_type, exc_value, traceback) -> None:
         self.stop()
 
+
 if __name__ == "__main__":
     with Spinner() as spinner:
         spinner.print("Some text")    
