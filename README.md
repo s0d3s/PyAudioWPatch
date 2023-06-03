@@ -102,6 +102,7 @@ p.terminate()
    - Run `python -m pyaudiowpatch` to get list of devices(like `print_detailed_system_info` call)
  
 #### Examples:
+ - 🆕 [Sequential recording from speakers](https://github.com/s0d3s/PyAudioWPatch/blob/master/examples/pawp_another_record_wasapi_loopback.py)
  - [Play sine, using \'new context manager'](https://github.com/s0d3s/PyAudioWPatch/blob/master/examples/pawp_play_sine_using_context_manger.py)
  - [Record audio from default speakers](https://github.com/s0d3s/PyAudioWPatch/blob/master/examples/pawp_record_wasapi_loopback.py)
  - [Simple recording app](https://github.com/s0d3s/PyAudioWPatch/blob/master/examples/pawp_simple_recording_app.py)
