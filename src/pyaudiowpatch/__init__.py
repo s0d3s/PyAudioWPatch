@@ -1013,7 +1013,6 @@ class PyAudio:
         device_index = pa.get_default_output_device()
         return self.get_device_info_by_index(device_index)
 
-
     def get_device_info_by_index(self, device_index):
         """
         Return the Device parameters for device specified in
@@ -1121,13 +1120,13 @@ class PyAudio:
         """
         
         if host_api_type is not None:
-            index = pa.host_api_type_id_to_host_api_index(host_api_type)
+            host_api_index = pa.host_api_type_id_to_host_api_index(host_api_type)
             
-        host_api_info = self.get_host_api_info_by_index(index)
+        host_api_info = self.get_host_api_info_by_index(host_api_index)
         
         for ha_device_index in range(0, host_api_info['deviceCount']):
             yield self.get_device_info_by_index(
-                pa.host_api_device_index_to_device_index(host_api_info['index'], ha_device_index)
+                    pa.host_api_device_index_to_device_index(host_api_info['index'], ha_device_index)
                 )
 
     def get_loopback_device_info_generator(self):
@@ -1143,7 +1142,7 @@ class PyAudio:
         for device_info in self.get_device_info_generator_by_host_api(
             host_api_type=paWASAPI
         ):
-            if(device_info['isLoopbackDevice']):
+            if device_info['isLoopbackDevice']:
                 yield device_info
 
     def print_detailed_system_info(self, print_func=print):
@@ -1163,10 +1162,10 @@ class PyAudio:
         for host_api in self.get_host_api_info_generator():
             print_func(
                 (
-                f" » "
-                f"{('['+str(host_api['index'])+']').center(8)}"
-                f"{str(host_api['type']).center(7)}"
-                f"  {host_api['name']}"
+                    f" » "
+                    f"{('['+str(host_api['index'])+']').center(8)}"
+                    f"{str(host_api['type']).center(7)}"
+                    f"  {host_api['name']}"
                 )
             )
             
@@ -1177,13 +1176,92 @@ class PyAudio:
         for device in self.get_device_info_generator():
             print_func(
                 (
-                f" » "
-                f"{('['+str(device['index'])+']').center(8)}"
-                f"{str(device['hostApi']).center(16)}"
-                f"  {str(device['isLoopbackDevice']).center(10)}"
-                f"  {device['name']}"
+                    f" » "
+                    f"{('['+str(device['index'])+']').center(8)}"
+                    f"{str(device['hostApi']).center(16)}"
+                    f"  {str(device['isLoopbackDevice']).center(10)}"
+                    f"  {device['name']}"
                 )
             )
+
+    ############################################################
+    # WPatch section > Additional life improvements
+    ############################################################
+
+    def get_default_wasapi_device(self, *, d_out: bool = False, d_in: bool = False) -> dict:
+        """
+        Return "info dict" of default (out/in)put device of WASAPI driver
+
+        :param d_out: Get default output device(higher priority than `d_in`)
+        :param d_in: Get default input device(rather, the semantic parameter)
+        :raises OSError: If WASAPI driver is unavailable
+        :return: "info dict" of device
+        """
+
+        try:
+            # Get default WASAPI info
+            wasapi_info = self.get_host_api_info_by_type(paWASAPI)
+        except OSError:
+            raise
+
+        # Get default WASAPI device
+        return self.get_device_info_by_index(wasapi_info[
+                                                 "defaultOutputDevice" if d_out
+                                                 else "defaultInputDevice"
+                                             ])
+
+    def get_wasapi_loopback_analogue_by_dict(self, info_dict: dict) -> dict:
+        """
+        Try to find loopback analogue for WASAPI speaker which `info_dict` was passed
+
+        :param info_dict: Dict-like info about device(retrieved from other PyAudio functions)
+        :raises LookupError: If no analogue is found
+        :raises ValueError: If `info_dict` doesn`t represent an output device
+        :raises KeyError: If `info_dict` doesn`t contain necessary fields
+        :return: "info dict" of loopback analogue for device passed via `info_dict`
+        """
+
+        if info_dict["maxOutputChannels"] < 1:
+            raise ValueError("`info_dict` must represent an output device")
+
+        if not info_dict["isLoopbackDevice"]:
+            for loopback in self.get_loopback_device_info_generator():
+                """
+                Try to find loopback device with same name(and [Loopback suffix]).
+                Unfortunately, this is the most adequate way at the moment.
+                """
+                if info_dict["name"] in loopback["name"]:
+                    return loopback
+
+            else:
+                raise LookupError("No analogue is found for passed device"
+                                  f"(index='{info_dict['index']}' name='{info_dict['name']}')")
+
+        else:
+            return info_dict
+
+    def get_wasapi_loopback_analogue_by_index(self, index: int) -> dict:
+        """
+        Try to find loopback analogue for WASAPI speaker which `index` was passed
+
+        :param index: Global index of device for which loopback analogue must be found
+        :raises LookupError: If no analogue is found
+        :raises ValueError: If passed `index` doesn`t refer to the output device
+        :return: "info dict" of a loopback analogue for device with passed `index`
+        """
+
+        return self.get_wasapi_loopback_analogue_by_dict(self.get_device_info_by_index(index))
+
+    def get_default_wasapi_loopback(self) -> dict:
+        """
+        Try to find loopback analogue for default WASAPI speaker
+
+        :raises OSError: If WASAPI driver is unavailable
+        :raises LookupError: If no analogue is found
+        :return: "info dict" of a loopback analogue for the default WASAPI output device
+        """
+
+        return self.get_wasapi_loopback_analogue_by_dict(self.get_default_wasapi_device(d_out=True))
 
 
 ######################################################################

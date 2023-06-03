@@ -92,13 +92,11 @@ p.terminate()
    - [`get_device_info_generator_by_host_api`](https://github.com/s0d3s/PyAudioWPatch/blob/master/src/pyaudiowpatch/__init__.py#L1109) - Iterate over all devices, by specific Host API(index/type)
    - [`get_loopback_device_info_generator`](https://github.com/s0d3s/PyAudioWPatch/blob/master/src/pyaudiowpatch/__init__.py#L1133) - Iterate over all devices(with loopback mode)
    - [`print_detailed_system_info`](https://github.com/s0d3s/PyAudioWPatch/blob/master/src/pyaudiowpatch/__init__.py#L1149) - Print some info about Host Api and devices
-<!---
-   - [`get_host_api_info_generator`](src/pyaudiowpatch/__init__.py#L1066) - Iterate over all Host APIs
-   - [`get_device_info_generator`](src/pyaudiowpatch/__init__.py#L1080) - Iterate over all devices
-   - [`get_device_info_generator_by_host_api`](src/pyaudiowpatch/__init__.py#L1093) - Iterate over all devices, by specific Host API(index/type)
-   - [`get_loopback_device_info_generator`](src/pyaudiowpatch/__init__.py#L1117) - Iterate over all devices(with loopback mode)
-   - [`print_detailed_system_info`](src/pyaudiowpatch/__init__.py#L1133) - Print some info about Host Api and devices-->
- 
+   - [`get_default_wasapi_loopback`](https://github.com/s0d3s/PyAudioWPatch/blob/master/src/pyaudiowpatch/__init__.py#L1255) - Return `loopback` for default speakers
+   - [`get_wasapi_loopback_analogue_by_index`](https://github.com/s0d3s/PyAudioWPatch/blob/master/src/pyaudiowpatch/__init__.py#L1243) - Return `loopback` for device via index
+   - [`get_wasapi_loopback_analogue_by_dict`](https://github.com/s0d3s/PyAudioWPatch/blob/master/src/pyaudiowpatch/__init__.py#L1213) - Return `loopback` for device related to `info_dict`
+   - [`get_default_wasapi_device`](https://github.com/s0d3s/PyAudioWPatch/blob/master/src/pyaudiowpatch/__init__.py#L1191) - Return default (out/in)put device for `WASAPI` driver
+
  - new features:
    - Context manager support, for PyAudio(manager) and Stream classes
    - Run `python -m pyaudiowpatch` to get list of devices(like `print_detailed_system_info` call)
