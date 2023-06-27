@@ -35,7 +35,7 @@ The Windows Audio Session API ([WASAPI](https://docs.microsoft.com/en-us/windows
 
 ## How to use
 
-*Read -> Install -> Enjoy!*
+*Read -> Install -> Enjoy!* ↣ *Press ⭐*
 
 ### Installation
 
