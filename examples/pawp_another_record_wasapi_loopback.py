@@ -53,7 +53,6 @@ if __name__ == "__main__":
                 format=data_format,
                 channels=default_speakers["maxInputChannels"],
                 rate=RATE,
-                frames_per_buffer=SAMPLE_SIZE,
                 input=True,
                 input_device_index=default_speakers["index"],
         ) as stream:
