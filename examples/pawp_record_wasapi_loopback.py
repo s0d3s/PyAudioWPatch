@@ -8,7 +8,8 @@ import pyaudiowpatch as pyaudio
 import time
 import wave
 
-duration = 5.0
+DURATION = 5.0
+CHUNK_SIZE = 512
 
 filename = "loopback_record.wav"
     
@@ -59,7 +60,7 @@ if __name__ == "__main__":
         with p.open(format=pyaudio.paInt16,
                 channels=default_speakers["maxInputChannels"],
                 rate=int(default_speakers["defaultSampleRate"]),
-                frames_per_buffer=pyaudio.get_sample_size(pyaudio.paInt16),
+                frames_per_buffer=CHUNK_SIZE,
                 input=True,
                 input_device_index=default_speakers["index"],
                 stream_callback=callback
@@ -69,7 +70,7 @@ if __name__ == "__main__":
             After leaving the context, everything will
             be correctly closed(Stream, PyAudio manager)            
             """
-            spinner.print(f"The next {duration} seconds will be written to {filename}")
-            time.sleep(duration) # Blocking execution while playing
+            spinner.print(f"The next {DURATION} seconds will be written to {filename}")
+            time.sleep(DURATION) # Blocking execution while playing
         
         wave_file.close()
