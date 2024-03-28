@@ -22,6 +22,8 @@ class InvalidDevice(ARException):
 
 
 class AudioRecorder:
+    CHUNK_SIZE = 512
+    
     def __init__(self, p_audio: pyaudio.PyAudio, output_queue: Queue):
         self.p = p_audio
         self.output_queue = output_queue
@@ -58,7 +60,7 @@ class AudioRecorder:
         self.stream = self.p.open(format=data_format,
                 channels=target_device["maxInputChannels"],
                 rate=int(target_device["defaultSampleRate"]),
-                frames_per_buffer=pyaudio.get_sample_size(data_format),
+                frames_per_buffer=self.CHUNK_SIZE,
                 input=True,
                 input_device_index=target_device["index"],
                 stream_callback=self.callback

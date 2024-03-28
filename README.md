@@ -1,7 +1,7 @@
 <div align="center">
 
 <!---![PyAudioWasapiLoopbackPatch](assets/snake-350_patch.png)-->
-<img alt="PyAudio Wasapi Loopback Patch" src="https://raw.githubusercontent.com/s0d3s/PyAudioWPatch/master/assets/snake_trace_clear.svg" height="414"/>
+<img alt="PyAudio Wasapi Loopback Patch" src="https://raw.githubusercontent.com/s0d3s/PyAudioWPatch/media_content_distribution/assets/snake_trace_clear.svg" height="414"/>
 
 # PyAudioWPatch
 
@@ -11,10 +11,10 @@ So you can *use speakers to record audio* ✨
 
 
 ![Last Commit](https://img.shields.io/github/last-commit/s0d3s/PyAudioWPatch)
-![Wheels](https://img.shields.io/pypi/wheel/PyAudioWpatch)
+[![Wheels](https://img.shields.io/pypi/wheel/PyAudioWpatch)](https://pypi.org/project/PyAudioWPatch/)
 ![Downloads](https://img.shields.io/pypi/dm/PyAudioWPatch)
 ![Py Version](https://img.shields.io/pypi/pyversions/PyAudioWpatch)
-![Latest release](https://img.shields.io/github/v/release/s0d3s/PyAudioWPatch)
+[![Latest release](https://img.shields.io/github/v/release/s0d3s/PyAudioWPatch)](https://github.com/s0d3s/PyAudioWPatch/releases/latest)
 
 </div>
 
@@ -35,7 +35,7 @@ The Windows Audio Session API ([WASAPI](https://docs.microsoft.com/en-us/windows
 
 ## How to use
 
-*Read -> Install -> Enjoy!*
+*Read -> Install -> Enjoy!* ↣ *Press ⭐*
 
 ### Installation
 
