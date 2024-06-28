@@ -92,7 +92,7 @@ def setup_extension():
             # If VCPKG_PATH is not set, it is likely a user oversight, as the
             # extension compiler likely won't be able to find the portaudio
             # library to link against.
-            #logging.warning("Warning: VCPKG_PATH envrionment variable not set.")
+            #logging.warning("Warning: VCPKG_PATH environment variable not set.")
             # So if VCPKG_PATH is not set, be sure to manually add the correct
             # path to portaudio's include and lib dirs, or use setuptools
             # build_ext to specify them on the command line.
