@@ -22,7 +22,7 @@ So you can *use speakers to record audio* ✨
 
 ## For whom?
 
-If you want to record sound from speakers in python, then this fork is for you.
+If you want to record sound from speakers in python, then this fork is for you. You can get recording from any device that supports WASAPI, for example, you can even record audio from *Bluetooth* headphones🎧
 
 > PyAudioW(*indows|ASAPI*)Patch come only with WMME, DirectX and WASAPI support
 > if you need more -> create an issue
@@ -42,7 +42,7 @@ The Windows Audio Session API ([WASAPI](https://docs.microsoft.com/en-us/windows
 ```bash
 pip install PyAudioWPatch
 ```
-> Wheels are available for **Windows**, Python *3.{7,8,9,10,11}*.<br />
+> Wheels are available for **Windows**, Python *3.{7,8,9,10,11,12}*.<br />
 > All wheels support APIs: WMME, WASAPI, DirectX(DSound).
 
 ### In code
