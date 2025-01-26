@@ -1,6 +1,6 @@
 #!/bin/bash
 
-make "clean"
+make clean
 W_DIR="wheelhouse"
 if [[ -d "$W_DIR" && "$(ls -A $W_DIR)" ]]
 then
@@ -13,13 +13,19 @@ cd "portaudio_v19/"
 
 #x64
 make clean
+dos2unix libtool
+make clean
 ./configure --with-winapi=wasapi,wmme,directx --enable-shared=no --host=x86_64-w64-mingw32
+dos2unix libtool
 make onlylib
 cp lib/.libs/libportaudio.a lib_dist/libportaudio-x86_64.a
 
 #x32
 make clean
+dos2unix libtool
+make clean
 ./configure --with-winapi=wasapi,wmme,directx --enable-shared=no --host=i686-w64-mingw32
+dos2unix libtool
 make onlylib
 cp lib/.libs/libportaudio.a lib_dist/libportaudio-x86.a
 

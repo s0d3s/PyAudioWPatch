@@ -84,6 +84,7 @@ def setup_extension():
             os.environ["CC"] = "x86_64-w64-mingw32-gcc"
         else:
             os.environ["CC"] = "i686-w64-mingw32-gcc"
+            extra_link_args.append("-static-libgcc")
 
         if WIN_VCPKG_PATH:
             include_dirs += [os.path.join(WIN_VCPKG_PATH, 'include')]
