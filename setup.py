@@ -25,7 +25,7 @@ COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
 IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 """
-
+ 
 import os
 import sys
 import logging
@@ -38,10 +38,16 @@ __version__ = "0.2.12.6"
 __author__  = "Hubert Pham(S0D3S edition)"
 
 
+def get_bool_from_env(var_name, default=None):
+    value = os.environ.get(var_name, default)
+    return value if value is None else value.lower() in ("1", "true")
+
+
 IS_CROSS_COMPILING = os.environ.get('PAWP_C_C_FLAG', None) == "TRUE" # used when building with cibuildwheel
 
 MAC_SYSROOT_PATH = os.environ.get("SYSROOT_PATH", None)
 WIN_VCPKG_PATH = os.environ.get("VCPKG_PATH", None)
+FORCE_CYGWIN_ENV = get_bool_from_env("FORCE_CYGWIN_ENV", default=None)
 
 PORTAUDIO_PATH = os.path.abspath(os.environ.get("PORTAUDIO_PATH", "./portaudio_v19"))
 
@@ -108,7 +114,7 @@ def setup_extension():
             else:
                 extra_link_args.append(os.path.join(PORTAUDIO_PATH, 'lib_dist/libportaudio-x86.a'))
 
-        if 'ORIGINAL_PATH' in os.environ and 'cygdrive' in os.environ['ORIGINAL_PATH']:
+        if FORCE_CYGWIN_ENV or 'ORIGINAL_PATH' in os.environ and 'cygdrive' in os.environ['ORIGINAL_PATH']:
             external_libraries += ["winmm","ole32","uuid"]
             extra_link_args += ["-lwinmm","-lole32","-luuid"]
         else:
