@@ -142,10 +142,12 @@ The following were taken as a basis:
 
 <div align="center">
 
+## Star History
+[![Star History Chart](https://api.star-history.com/svg?repos=s0d3s/PyAudioWPatch&type=Date)](https://star-history.com/#s0d3s/PyAudioWPatch&Date)
+
 ## Origin README
 
 </div>
-
 
 <img align="right" width="200" style="margin-left: 3px" src="https://people.csail.mit.edu/hubert/pyaudio/images/snake-300.png">
 
