@@ -42,7 +42,7 @@ The Windows Audio Session API ([WASAPI](https://docs.microsoft.com/en-us/windows
 ```bash
 pip install PyAudioWPatch
 ```
-> Wheels are available for **Windows**, Python *3.{7,8,9,10,11,12}*.<br />
+> Wheels are available for **Windows**, Python *3.{7,8,9,10,11,12,13}*.<br />
 > All wheels support APIs: WMME, WASAPI, DirectX(DSound).
 
 ### In code
