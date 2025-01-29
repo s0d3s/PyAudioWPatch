@@ -43,7 +43,7 @@ def get_bool_from_env(var_name, default=None):
     return value if value is None else value.lower() in ("1", "true")
 
 
-IS_CROSS_COMPILING = os.environ.get('PAWP_C_C_FLAG', None) == "TRUE" # used when building with cibuildwheel
+IS_CROSS_COMPILING = get_bool_from_env("PAWP_C_C_FLAG", default=None) # used when building with cibuildwheel
 
 MAC_SYSROOT_PATH = os.environ.get("SYSROOT_PATH", None)
 WIN_VCPKG_PATH = os.environ.get("VCPKG_PATH", None)
