@@ -34,7 +34,7 @@ import platform
 from setuptools import setup, Extension
 
 
-__version__ = "0.2.12.7"
+__version__ = "0.2.12.8"
 __author__  = "Hubert Pham(S0D3S edition)"
 
 
