@@ -1,14 +1,24 @@
-# ❤ Recall.ai - API for desktop recording
+# [capture-system-or-process-audio](https://github.com/s0d3s/capture-system-or-process-audio): Per-App, System Loopback & Mic Audio Capture for Python (Windows, Linux & macOS)
+
+<img src="https://raw.githubusercontent.com/s0d3s/PyAudioWPatch/media_content_distribution/assets/capture-system-or-process-audio_promo_logo.svg" alt="capture-system-or-process-audio — cross-platform per-app, system loopback, and microphone PCM audio capture for Python, Rust, C, and C++" width="140" height="150" align="left">
+
+**Need per-app audio isolation or macOS / Linux support?** My new library(author of **PyAudioWPatch**), **[capture-system-or-process-audio](https://github.com/s0d3s/capture-system-or-process-audio)** lets you record a single app (Zoom, Spotify, browser, or game) without chat notifications, capture full speaker loopback, or mix **microphone + app/system audio** into one live PCM stream across **Windows** (WASAPI), **Linux** (PipeWire / PulseAudio), and **Apple Silicon macOS** (Core Audio / ScreenCaptureKit) — **no virtual audio cables** (VB-Cable / BlackHole) required. It also fixes silent-speaker `read()` hangs, follows default headphone switches automatically, resamples on the fly (16 kHz for Whisper / STT, zero-copy NumPy), and ships native bindings for **Python 3.11–3.15t**, **Rust**, **C++17**, and **C11**.
+
+`pip install capture-system-or-process-audio` · **[Python Quick Start](https://github.com/s0d3s/capture-system-or-process-audio#-python-quick-start)** · **[Migrate from PyAudioWPatch](https://s0d3s.github.io/capture-system-or-process-audio/sdks/python/#3-migrating-from-pyaudiowpatch)** · **[Docs & API](https://s0d3s.github.io/capture-system-or-process-audio/)** · **[PyPI](https://pypi.org/project/capture-system-or-process-audio/)**
+
+<br clear="left"/>
+
+## Recall.ai - API for desktop recording
 
 > If you’re looking for a hosted desktop recording API, consider checking out [Recall.ai](https://www.recall.ai/product/desktop-recording-sdk?utm_source=github&utm_medium=sponsorship&utm_campaign=s0d3s-pyaudiowpatch), an API that records Zoom, Google Meet, Microsoft Teams, in-person meetings, and more. <br><br>
-> ✨ This repo is sponsored by Recall.ai ✨
+> ✨ PyAudioWPatch is sponsored by Recall.ai ✨
 
 <div align="center">
 
+## PyAudioWPatch
 <!---![PyAudioWasapiLoopbackPatch](assets/snake-350_patch.png)-->
-<img alt="PyAudio Wasapi Loopback Patch" src="https://raw.githubusercontent.com/s0d3s/PyAudioWPatch/media_content_distribution/assets/snake_trace_clear.svg" height="414"/>
+<img src="https://raw.githubusercontent.com/s0d3s/PyAudioWPatch/media_content_distribution/assets/snake_trace_clear.svg" alt="PyAudioWPatch logo" height="140">
 
-# PyAudioWPatch
 
 This fork will allow you to use the WASAPI device as loopback using **PyAudio**.
 <br>
